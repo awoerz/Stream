@@ -1,5 +1,9 @@
 node_modules
 dist
 dist-electron
-./.sfdx
-./.DS_Store
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Salesforce local tooling
+.sfdx/
