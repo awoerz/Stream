@@ -238,8 +238,10 @@ Stream is actively under development.
 
 Features and workflows are evolving quickly, and this document is subject to change.
 
+Every action taken to build this application can be found in the 1-Stream directory under completed tasks.
+
 ---
 
 ## License
 
-TBD
+Copyright 2026 Adam Woerz. Licensed under the Apache License, Version 2.0. See LICENSE for details.
