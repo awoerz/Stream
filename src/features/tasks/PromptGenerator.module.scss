@@ -1,0 +1,39 @@
+@use "../../styles/mixins" as mixins;
+
+.root {
+  display: grid;
+  gap: 18px;
+}
+
+.field {
+  @include mixins.field-stack;
+}
+
+.fieldLabel {
+  @include mixins.field-label;
+}
+
+.fieldInput {
+  @include mixins.field-input;
+  min-height: 104px;
+  resize: vertical;
+}
+
+.message {
+  @include mixins.body-copy(var(--app-copy-text));
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.primaryButton {
+  @include mixins.primary-button;
+}
+
+.secondaryButton {
+  @include mixins.secondary-button;
+}

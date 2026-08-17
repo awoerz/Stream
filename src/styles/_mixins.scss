@@ -1,0 +1,141 @@
+@mixin serif-heading($size) {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", serif;
+  font-size: $size;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+@mixin section-label {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--app-label);
+}
+
+@mixin body-copy($color: var(--app-text-muted), $size: 1rem) {
+  margin: 0;
+  font-size: $size;
+  color: $color;
+}
+
+@mixin card(
+  $padding: 28px,
+  $background: var(--app-surface),
+  $shadow: var(--app-shadow),
+  $radius: 28px
+) {
+  padding: $padding;
+  border: 1px solid var(--app-border);
+  border-radius: $radius;
+  background: $background;
+  box-shadow: $shadow;
+}
+
+@mixin info-panel($background: var(--app-accent-surface), $radius: 22px) {
+  padding: 18px 20px;
+  border: 1px solid var(--app-border);
+  border-radius: $radius;
+  background: $background;
+}
+
+@mixin primary-button {
+  width: fit-content;
+  min-width: 220px;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--app-primary-start) 0%, var(--app-primary-end) 100%);
+  color: var(--app-button-text);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(63, 95, 70, 0.22);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    opacity 160ms ease;
+
+  &:hover:enabled {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 34px rgba(63, 95, 70, 0.26);
+  }
+
+  &:disabled {
+    cursor: wait;
+    opacity: 0.75;
+  }
+}
+
+@mixin secondary-button {
+  width: fit-content;
+  min-width: 220px;
+  padding: 14px 22px;
+  border: 1px solid var(--app-border);
+  border-radius: 999px;
+  background: var(--app-secondary-bg);
+  color: var(--app-secondary-text);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    opacity 160ms ease;
+
+  &:hover:enabled {
+    transform: translateY(-1px);
+    border-color: rgba(63, 95, 70, 0.32);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+@mixin compact-secondary-button {
+  @include secondary-button;
+  min-width: 0;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.9rem;
+}
+
+@mixin field-stack {
+  display: grid;
+  gap: 8px;
+}
+
+@mixin field-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--app-label);
+}
+
+@mixin field-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--app-border);
+  border-radius: 18px;
+  background: var(--app-surface-strong);
+  color: var(--app-text);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+
+  &:focus {
+    outline: none;
+    border-color: rgba(63, 95, 70, 0.48);
+    box-shadow: 0 0 0 4px rgba(79, 120, 83, 0.1);
+  }
+}
+
+@mixin invalid-field {
+  border-color: rgba(164, 87, 67, 0.72);
+  box-shadow: 0 0 0 4px rgba(164, 87, 67, 0.08);
+}

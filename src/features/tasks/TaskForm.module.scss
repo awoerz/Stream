@@ -1,0 +1,124 @@
+@use "../../styles/mixins" as mixins;
+
+.form {
+  display: grid;
+  gap: 18px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.field {
+  @include mixins.field-stack;
+}
+
+.fieldLabel {
+  @include mixins.field-label;
+}
+
+.fieldInput {
+  @include mixins.field-input;
+}
+
+.hiddenFileInput {
+  display: none;
+}
+
+.invalid {
+  @include mixins.invalid-field;
+}
+
+.textarea {
+  min-height: 104px;
+  resize: vertical;
+}
+
+.hint,
+.error,
+.message {
+  margin: 0;
+  font-size: 0.94rem;
+}
+
+.hint {
+  color: var(--app-hint-text);
+}
+
+.error {
+  color: var(--app-danger-text);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.primaryButton {
+  @include mixins.primary-button;
+}
+
+.secondaryButton {
+  @include mixins.secondary-button;
+}
+
+.uploadButton,
+.imageAction {
+  @include mixins.compact-secondary-button;
+}
+
+.uploadButton {
+  display: inline-flex;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.imageCard {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--app-border);
+  border-radius: 18px;
+  background: var(--app-surface-soft);
+}
+
+.imagePreview {
+  width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  border: 1px solid var(--app-border);
+  border-radius: 14px;
+  background: var(--app-surface);
+}
+
+.imageCaption {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--app-copy-text);
+  overflow-wrap: anywhere;
+}
+
+.imageAction {
+  width: fit-content;
+}
+
+.message {
+  color: var(--app-copy-text);
+}
+
+@media (max-width: 900px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}

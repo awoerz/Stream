@@ -1,0 +1,173 @@
+@use "../styles/mixins" as mixins;
+
+.pageShell {
+  display: grid;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: end;
+  @include mixins.card($padding: 32px);
+}
+
+.sectionLabel {
+  @include mixins.section-label;
+}
+
+.title {
+  @include mixins.serif-heading(clamp(2rem, 4vw, 3rem));
+  margin-top: 10px;
+}
+
+.supportingCopy {
+  @include mixins.body-copy(var(--app-copy-text));
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.primaryButton {
+  @include mixins.primary-button;
+}
+
+.secondaryButton {
+  @include mixins.secondary-button;
+}
+
+.compactButton {
+  @include mixins.compact-secondary-button;
+}
+
+.disabledActionShell {
+  position: relative;
+  display: inline-flex;
+}
+
+.disabledActionHitbox {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  border-radius: 999px;
+  background: transparent;
+  cursor: not-allowed;
+}
+
+.inlineAlert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  border-radius: 20px;
+  border: 1px solid var(--app-border);
+}
+
+.warningAlert {
+  background: var(--app-accent-surface);
+  border-color: var(--app-border-strong);
+}
+
+.alertCopy {
+  margin: 0;
+}
+
+.utilityRow {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.scroll {
+  overflow-x: auto;
+  overflow-y: visible;
+  padding-bottom: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 450px);
+  gap: 18px;
+  align-items: start;
+  min-width: max-content;
+}
+
+.column {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 16px;
+  min-height: 520px;
+  max-height: 70vh;
+  min-width: 220px;
+  @include mixins.card(
+    $padding: 16px,
+    $background: var(--app-surface),
+    $shadow: var(--app-shadow-soft),
+    $radius: 24px
+  );
+}
+
+.columnHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.columnTitle {
+  @include mixins.serif-heading(1.35rem);
+}
+
+.columnCount {
+  margin: 0;
+  color: var(--app-text-soft);
+}
+
+.columnBody {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.emptyCard {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid var(--app-border);
+  border-radius: 18px;
+  background: var(--app-surface-soft);
+  min-height: 120px;
+  align-content: start;
+}
+
+.emptyCopy {
+  margin: 0;
+  color: var(--app-text-soft);
+}
+
+@media (max-width: 900px) {
+  .header {
+    align-items: start;
+    flex-direction: column;
+    border-radius: 24px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 368px);
+  }
+
+  .column {
+    min-width: 368px;
+  }
+}

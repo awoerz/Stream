@@ -1,0 +1,116 @@
+:root {
+  color-scheme: light;
+  --app-text: #1d2b24;
+  --app-text-muted: rgba(29, 43, 36, 0.8);
+  --app-text-soft: rgba(29, 43, 36, 0.68);
+  --app-heading: #24352d;
+  --app-label: #5d705a;
+  --app-surface: rgba(255, 252, 246, 0.88);
+  --app-surface-strong: rgba(255, 252, 246, 0.96);
+  --app-surface-soft: rgba(247, 243, 235, 0.82);
+  --app-surface-muted: rgba(239, 233, 220, 0.9);
+  --app-accent-surface: rgba(235, 243, 231, 0.68);
+  --app-accent-surface-strong: rgba(232, 241, 228, 0.94);
+  --app-border: rgba(81, 97, 81, 0.12);
+  --app-border-strong: rgba(63, 95, 70, 0.32);
+  --app-shadow: 0 20px 60px rgba(73, 79, 67, 0.08);
+  --app-shadow-soft: 0 18px 40px rgba(73, 79, 67, 0.06);
+  --app-shadow-hover: 0 12px 24px rgba(73, 79, 67, 0.08);
+  --app-button-text: #f8f4ec;
+  --app-primary-start: #55785d;
+  --app-primary-end: #3f5f46;
+  --app-secondary-bg: rgba(250, 246, 238, 0.9);
+  --app-secondary-text: #34513a;
+  --app-nav-bg: rgba(255, 252, 246, 0.66);
+  --app-card-bg-soft: rgba(255, 252, 246, 0.76);
+  --app-quiet-bg: rgba(247, 243, 235, 0.68);
+  --app-quiet-text: rgba(52, 81, 58, 0.82);
+  --app-hint-text: rgba(29, 43, 36, 0.58);
+  --app-copy-text: rgba(29, 43, 36, 0.76);
+  --app-copy-text-soft: rgba(29, 43, 36, 0.74);
+  --app-preview-text: rgba(29, 43, 36, 0.82);
+  --app-danger-text: #8f4b39;
+  --app-danger-badge-bg: rgba(170, 92, 69, 0.16);
+  --app-danger-badge-text: #8b4332;
+  --app-meta-badge-bg: rgba(84, 95, 84, 0.1);
+  --app-type-badge-bg: rgba(71, 102, 77, 0.14);
+  --app-overlay: rgba(33, 42, 35, 0.34);
+  --app-modal-close-bg: rgba(247, 243, 235, 0.86);
+  --app-modal-close-border: rgba(81, 97, 81, 0.16);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--app-text);
+  background:
+    radial-gradient(circle at top left, rgba(191, 209, 190, 0.9), transparent 30%),
+    linear-gradient(135deg, #f4efe5 0%, #ebe4d6 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --app-text: #e8efe9;
+  --app-text-muted: rgba(232, 239, 233, 0.82);
+  --app-text-soft: rgba(232, 239, 233, 0.68);
+  --app-heading: #f4f7f4;
+  --app-label: #a5b7a8;
+  --app-surface: rgba(22, 28, 25, 0.88);
+  --app-surface-strong: rgba(22, 28, 25, 0.96);
+  --app-surface-soft: rgba(32, 39, 35, 0.9);
+  --app-surface-muted: rgba(35, 42, 38, 0.92);
+  --app-accent-surface: rgba(34, 48, 41, 0.82);
+  --app-accent-surface-strong: rgba(42, 58, 49, 0.92);
+  --app-border: rgba(154, 174, 160, 0.14);
+  --app-border-strong: rgba(154, 174, 160, 0.28);
+  --app-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+  --app-shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.24);
+  --app-shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.26);
+  --app-button-text: #f4f7f4;
+  --app-primary-start: #6f8f80;
+  --app-primary-end: #4d6659;
+  --app-secondary-bg: rgba(36, 44, 39, 0.92);
+  --app-secondary-text: #dfe8e1;
+  --app-nav-bg: rgba(29, 37, 33, 0.92);
+  --app-card-bg-soft: rgba(29, 37, 33, 0.9);
+  --app-quiet-bg: rgba(38, 47, 42, 0.9);
+  --app-quiet-text: rgba(223, 232, 225, 0.86);
+  --app-hint-text: rgba(223, 232, 225, 0.64);
+  --app-copy-text: rgba(223, 232, 225, 0.82);
+  --app-copy-text-soft: rgba(223, 232, 225, 0.72);
+  --app-preview-text: rgba(232, 239, 233, 0.86);
+  --app-danger-text: #ffb3a0;
+  --app-danger-badge-bg: rgba(214, 125, 101, 0.2);
+  --app-danger-badge-text: #ffd0c5;
+  --app-meta-badge-bg: rgba(154, 174, 160, 0.14);
+  --app-type-badge-bg: rgba(111, 143, 128, 0.18);
+  --app-overlay: rgba(4, 7, 6, 0.54);
+  --app-modal-close-bg: rgba(36, 44, 39, 0.96);
+  --app-modal-close-border: rgba(154, 174, 160, 0.22);
+  background:
+    radial-gradient(circle at top left, rgba(72, 94, 81, 0.55), transparent 32%),
+    linear-gradient(135deg, #141917 0%, #1c2420 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}

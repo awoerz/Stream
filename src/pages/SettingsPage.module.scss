@@ -1,0 +1,177 @@
+@use "../styles/mixins" as mixins;
+
+.pageShell {
+  display: grid;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: end;
+  @include mixins.card($padding: 32px);
+}
+
+.sectionLabel {
+  @include mixins.section-label;
+}
+
+.title {
+  @include mixins.serif-heading(clamp(2rem, 4vw, 3rem));
+  margin-top: 10px;
+}
+
+.sections {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  align-content: start;
+}
+
+.card {
+  @include mixins.card($padding: 28px);
+}
+
+.cardTitle {
+  @include mixins.serif-heading(1.45rem);
+  margin-top: 8px;
+  color: var(--app-heading);
+}
+
+.copy,
+.summaryCopy {
+  @include mixins.body-copy;
+  margin-top: 12px;
+}
+
+.summaryCopy + .summaryCopy {
+  margin-top: 10px;
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 16px 0 18px;
+}
+
+.primaryButton {
+  @include mixins.primary-button;
+}
+
+.secondaryButton {
+  @include mixins.secondary-button;
+}
+
+.pathPanel {
+  @include mixins.info-panel;
+  margin-top: 14px;
+}
+
+.subtlePanel {
+  background: var(--app-surface-soft);
+}
+
+.pathLabel {
+  @include mixins.section-label;
+}
+
+.pathValue {
+  margin: 10px 0 0;
+  font-family: "SF Mono", "Menlo", monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  word-break: break-word;
+  color: var(--app-text-muted);
+}
+
+.gitignoreChoice {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.choiceCard {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+  border: 1px solid var(--app-border);
+  border-radius: 22px;
+  background: var(--app-card-bg-soft);
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease,
+    box-shadow 160ms ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: rgba(63, 95, 70, 0.28);
+    box-shadow: var(--app-shadow-hover);
+  }
+
+  input {
+    margin: 0;
+  }
+}
+
+.choiceCardSelected {
+  border-color: var(--app-border-strong);
+  background: var(--app-accent-surface-strong);
+}
+
+.choiceTitle {
+  font-weight: 700;
+  color: var(--app-secondary-text);
+}
+
+.choiceCopy {
+  color: var(--app-copy-text-soft);
+}
+
+.field {
+  @include mixins.field-stack;
+}
+
+.fieldLabel {
+  @include mixins.field-label;
+}
+
+.fieldInput {
+  @include mixins.field-input;
+}
+
+.invalid {
+  @include mixins.invalid-field;
+}
+
+.fieldHint,
+.fieldError {
+  margin: 0;
+  font-size: 0.94rem;
+}
+
+.fieldHint {
+  color: var(--app-hint-text);
+}
+
+.fieldError {
+  color: var(--app-danger-text);
+}
+
+@media (max-width: 900px) {
+  .gitignoreChoice {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: start;
+    border-radius: 24px;
+  }
+
+  .card {
+    border-radius: 24px;
+  }
+}

@@ -1,0 +1,71 @@
+@use "../styles/mixins" as mixins;
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: var(--app-overlay);
+  backdrop-filter: blur(6px);
+}
+
+.card {
+  width: min(920px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+  padding: 28px;
+  border: 1px solid var(--app-border);
+  border-radius: 28px;
+  background: var(--app-surface-strong);
+  box-shadow: 0 24px 80px rgba(33, 42, 35, 0.2);
+}
+
+.prompt {
+  width: min(980px, 100%);
+}
+
+.detail {
+  width: min(860px, 100%);
+}
+
+.document {
+  width: min(960px, 100%);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  @include mixins.section-label;
+}
+
+.title {
+  @include mixins.serif-heading(clamp(2rem, 4vw, 3rem));
+  margin-top: 10px;
+}
+
+.closeButton {
+  padding: 10px 14px;
+  border: 1px solid var(--app-modal-close-border);
+  border-radius: 14px;
+  background: var(--app-modal-close-bg);
+  color: var(--app-secondary-text);
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .card {
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+}

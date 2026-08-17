@@ -1,0 +1,44 @@
+@use "../styles/mixins" as mixins;
+
+.heroCard {
+  @include mixins.card($padding: 36px);
+}
+
+.sectionLabel {
+  @include mixins.section-label;
+}
+
+.title {
+  @include mixins.serif-heading(clamp(2rem, 4vw, 3rem));
+  margin-top: 10px;
+}
+
+.copy {
+  @include mixins.body-copy;
+  margin-top: 12px;
+}
+
+.githubCard {
+  @include mixins.card($padding: 28px);
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: rgba(63, 95, 70, 0.28);
+    box-shadow: var(--app-shadow-hover);
+  }
+}
+
+.cardTitle {
+  @include mixins.serif-heading(1.45rem);
+  margin-top: 8px;
+  color: var(--app-heading);
+}
