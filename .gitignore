@@ -1,3 +1,5 @@
 node_modules
 dist
 dist-electron
+./.sfdx
+./.DS_Store
